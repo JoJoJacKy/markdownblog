@@ -1,0 +1,82 @@
+<%- include("partials/header") %>
+    <div class="container">
+        <!-- <h1 class="text-center">Blog Articles</h1> -->
+        <div class="container my-4">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="container d-block w-100 text-center">
+                        <h1>Welcome To The Danger Zone</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container d-block w-100 text-center">
+                        <h1>Featuring God's Plan</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container d-block w-100 text-center">
+                        <h1>and Linkin Park </h1>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+        <div class="row blog-row">
+            <div class="latest-posts border-end d-flex flex-column my-3 col-lg-4">
+                <h4 class="text-center">Latest Posts</h4>
+                <% articles.forEach(article => { %>
+                    <div class="container my-2 latest-blogs-content">
+                        <div class="mt-4 mb-2 latest-blogs">
+                            <div class="container">
+                                <h5><%= article.title %></h5>
+                                <div class="text-muted mb-2">
+                                    <%= article.createdAt.toLocaleDateString() %>
+                                </div>
+                                <div class="mb-2"><%= article.description %></div>
+                                
+                                <div class="text-center blog-btns">
+                                    <a href="articles/<%= article.slug%>" class="btn btn-sm btn-primary">Read</a>
+                                    <a href="articles/edit/<%= article._id %>" class="btn btn-sm btn-info">Edit</a>
+                                    <form class="d-inline" action="/articles/<%= article._id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
+
+                                <div class="blog-divider mx-auto my-2 py-2">
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+                <div class="my-5 text-center">
+                    <a href="articles/all?page=1&limit=4" class="btn btn-main-color btn-outline-light">See All Blogs</a>
+                </div>
+            </div>
+
+            <div class="main-posts col-lg-8 my-3">
+                <div class="container">
+                    <h4 class="text-center">Here it would show a pinned post, or announcement</h4>
+                    <h5 class="text-center mt-5">Embedded Video Test</h5>
+                    <div class="container">
+                        <iframe class="mx-auto" style="display: block;" width="560" height="315" src="https://www.youtube.com/embed/zofBinqC2F4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
+    </div>
+<%- include("partials/footer") %>

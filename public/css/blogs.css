@@ -1,0 +1,121 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Colors for the Blogs */
+body {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 2000px;
+    color: rgb(255, 211, 173);
+}
+
+.btn:hover {
+    transform: scale(0.95);
+}
+
+.latest-posts {
+    border-color: rgb(255, 211, 173);
+}
+
+.btn-main-color {
+    width: 130px;
+}
+
+.btn-main-color:hover {
+    background-color: rgb(255, 211, 173);
+    color: #141E30;
+}
+
+/* Big Logo */
+.big-logo {
+    height: 200px;
+    text-align: center;
+}
+.big-logo img {
+    transform: scale(0.50);
+    position: relative;
+    bottom: 135px;
+}
+
+
+/* Navbar Styling */
+.nav-link {
+    color: rgb(255, 211, 173);
+}
+.nav-link:hover {
+    color: rgb(255, 211, 173);
+    transform: scale(1.05);
+}
+
+
+/* .subheader-section {
+    background: rgb(255,201,153);
+    background: linear-gradient(0, rgba(255,201,153,1) 0%, rgba(0,34,55,1) 77%);
+    min-height: 200px;
+    color: rgb(255,201,153);
+} */
+
+/* Subheader Section */
+
+/* Blog Card Styling */
+.latest-blogs {
+    width: 300px;
+    height: 150px;
+    border-radius: 35px;
+    background: none;
+    color: rgb(255, 211, 173) !important;
+}
+.blog-divider {
+    color: rgb(255, 211, 173);
+    width: 60px;
+    border-bottom: 2px dotted;
+}
+
+.latest-blogs-content {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styled the latest post buttons */
+.blog-btns .btn {
+    padding: 0;
+    width: 55px;
+    height: 25px;
+    font-size: smaller;
+    text-align: center;
+}
+
+/* Individual Blog Posts */
+.blog-img {
+    border-radius: 20px;
+}
+
+
+@media(max-width: 992px) {
+    /* Removing the border */
+    .latest-posts {
+        border: 0 !important;
+        padding-bottom: 30px;
+    }
+    .latest-blogs-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .blog-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+}
+
+.latest-blogs-all {
+    width: 400px;
+    height: 150px;
+    border-radius: 35px;
+    background: none;
+    color: rgb(255, 211, 173) !important;
+}

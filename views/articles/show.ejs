@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+
+    <div class="container-fluid">
+        <div class="mx-auto w-75">
+            <img class="blog-img my-3 img-fluid" src="/images/eft.jpg" alt="">
+        </div>
+        <h1 class="mb-1 text-center"><%= article.title %></h1>
+        <div class="text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+        </div>
+        <a href="/articles/all?page=1&limit=4" class="btn btn-sm btn-outline-light">All Articles</a>
+        <a href="/articles" class="btn btn-sm btn-light">Blog</a>
+        <a href="/articles/edit/<%= article._id %>" class="btn btn-sm btn-info">Edit</a>
+
+        <div class="my-3">
+            <%- article.sanitizedHtml %>
+        </div>
+    </div>
+<%- include("partials/footer") %>
+
+

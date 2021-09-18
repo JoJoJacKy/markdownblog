@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+    <div class="container-fluid">
+        <h3 class="mb-4 text-center my-3">Edit Blog Post</h3>
+
+
+        <form action="/articles/<%= article._id%>?_method=PUT" method="POST">
+            <%- include("_form_fields.ejs") %>
+        </form>
+    </div>
+
+
+<%- include("partials/footer") %>
+

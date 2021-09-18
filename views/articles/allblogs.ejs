@@ -1,0 +1,80 @@
+<%- include("partials/header") %>
+        <div class="d-flex flex-column my-3">
+            <h4 class="text-center">All Blogs</h4>
+            <% articles.forEach(article => { %>
+                <div class="container my-2 latest-blogs-content">
+                    <div class="mt-4 mb-2 latest-blogs-all">
+                        <div class="">
+                            <h5><%= article.title %></h5>
+                            <div class="text-muted mb-2">
+                                <%= article.createdAt.toLocaleDateString() %>
+                            </div>
+                            <div class="mb-2"><%= article.description %></div>
+                            
+                            <div class="text-center blog-btns">
+                                <a href="<%= article.slug%>" class="btn btn-sm btn-primary">Read</a>
+                                <a href="edit/<%= article._id %>" class="btn btn-sm btn-info">Edit</a>
+                                <form class="d-inline" action="/<%= article._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            <nav class="mx-auto my-3">
+                <% if (pages > 0) { %>
+                    <ul class="pagination">
+                    <% if (current == 1) { %>
+                        <li class="disabled page-item">
+                            <a class="page-link" href="?page=1&limit=4" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1&limit=4" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="disabled page-item"><a class="page-link">...</a></li>
+                    <% } %>
+
+                    <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                        <% if (i == current) { %>
+                            <li class="page-item"><a class="page-link" href="#"><%= i %></a></li>
+                        <% } else { %>
+                            <li class="page-item"><a class="page-link" href="all?page=<%= i %>&limit=4"><%= i %></a></li>
+                        <% } %>
+
+                        <% if (i == Number(current) + 4 && i < pages) { %>
+                            <li class="disabled page-item"><a class="page-link">...</a></li>
+                        <% } %>
+                    <% } %>
+
+                    <% if (current == pages) { %>
+                        <li class="disabled page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="page-item">
+                            <a class="page-link" href="all?page=<%= pages %>&limit=4" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    </ul>
+                <% } %>
+            </nav>
+
+<%- include("partials/footer") %>

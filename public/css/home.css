@@ -1,0 +1,37 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 2000px;
+    color: rgb(255,201,153);
+}
+
+/* Big Logo Styling */
+.big-logo {
+    height: 200px;
+    text-align: center;
+}
+.big-logo img {
+    transform: scale(0.50);
+    position: relative;
+    bottom: 135px;
+}
+
+/* Navbar Styling */
+.nav-link {
+    color: rgb(255, 211, 173);
+}
+.nav-link:hover {
+    color: rgb(255, 211, 173);
+    transform: scale(1.05);
+}
+
+
+/* Main Section */
+/* .main-body {
+    
+} */

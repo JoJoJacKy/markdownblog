@@ -1,0 +1,19 @@
+<!-- These inputs belong the form within the new.ejs -->
+<div class="form-group mb-3">
+    <label for="title">Title</label>
+    <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control">
+</div>
+<div class="form-group mb-3">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="2" class="form-control"><%= article.description %></textarea>
+</div>
+<div class="form-group mb-3">
+    <label for="markdown">Markdown</label>
+    <textarea required name="markdown" id="markdown" cols="30" rows="10" class="form-control"><%= article.markdown %></textarea>
+</div>
+
+<!-- Goes back to the index.ejs page (Main home route) -->
+
+<a href="/articles" class="btn btn-outline-light">Cancel</a>
+<button type="submit" class="btn btn-outline-light btn-main-color">Save</button>
+<!-- Bootstrap is automatically extended to this when it is passed -->

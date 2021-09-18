@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+    <div class="container-fluid">
+        <h3 class="mb-4 text-center my-3">New Blog Post</h3>
+
+
+        <form action="/articles" method="POST">
+            <%- include("_form_fields.ejs") %>
+        </form>
+    </div>
+<%- include("partials/footer") %>

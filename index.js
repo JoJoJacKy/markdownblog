@@ -16,7 +16,7 @@ const articleRouter = require(__dirname + "/routes/articles");
 app.set("view engine", "ejs");
 
 // Connecting to our Mongoose DB
-mongoose.connect("mongodb+srv://JoJoJacKy:15319_Prey@gettingstarted.dtf7h.mongodb.net/MarkdownBlogDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://@gettingstarted.dtf7h.mongodb.net/MarkdownBlogDB?retryWrites=true&w=majority", {
     useNewUrlParser: true,
 });
 
